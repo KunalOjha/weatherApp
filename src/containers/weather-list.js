@@ -5,10 +5,12 @@ class WeatherList extends Component {
 
     renderWeather() {
         return this.props.weather.map(item=> {
+        
+            const city = item.name
            return (
-            <tr>
+            <tr key={city}>
                 <td>
-                    {item.name}
+                    {city}
                 </td>
              </tr>
             )}
