@@ -10,6 +10,6 @@ export function fetchWeather(city) {
     const request = axios.get(url);
     return {
         type: FETCH_WEATHER,
-        paylod: request
+        payload: request
     }
 }
