@@ -24,7 +24,8 @@ onFormSubmit(event) {
 
     render() {
         return (
-            <form className="input-group"
+            <form 
+                className="input-group"
                 onSubmit={this.onFormSubmit}>
                 <input
                     className="form-control"
@@ -39,11 +40,15 @@ onFormSubmit(event) {
         );
     }
 }
+
+// This funciton will map all functions on Dispatch to the container's props object.
+// We need to include this function whenever we want to use an action creator
 function mapDispatchToProps(dispatch) {
     //makes sure action flows down into middleware, then reducers inside of redux
-    //bind action creators to dispatch
-    return bindActionCreators({fetchWeather},dispatch);
+    //bind action creators to dispatch object
+    return bindActionCreators({fetchWeather}, dispatch);
 };
 
-//make dispatch object available on SearchBar props object
+//the connect function is the final piece that connects our state and dispatch (action creators) objects to
+// the component/container's props object.
 export default connect(null, mapDispatchToProps)(SearchBar);
