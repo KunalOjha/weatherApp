@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchWeather} from '../actions/index'
+import styled from 'styled-components';
 
 class SearchBar extends Component { 
     constructor(props) {
@@ -24,7 +25,7 @@ onFormSubmit(event) {
 
     render() {
         return (
-            <form 
+            <Form 
                 className="input-group"
                 onSubmit={this.onFormSubmit}>
                 <input
@@ -34,9 +35,9 @@ onFormSubmit(event) {
                     onChange= {event=>this.onInputChage(event)}
                     />
                 <span className="input-group-btn">
-                    <button type="submit" className="btn btn-secondary">Submit</button>
+                    <button type="submit" className="btn btn-success">Submit</button>
                 </span>
-            </form>
+            </Form>
         );
     }
 }
@@ -52,3 +53,7 @@ function mapDispatchToProps(dispatch) {
 //the connect function is the final piece that connects our state and dispatch (action creators) objects to
 // the component/container's props object.
 export default connect(null, mapDispatchToProps)(SearchBar);
+
+const Form = styled.form`
+margin-top:20px;
+`

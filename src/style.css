@@ -1,7 +1,3 @@
-.hello {
-    margin-top: 200px
-}
-
 td, th {
     vertical-align: middle !important;
     text-align: center;
@@ -13,4 +9,9 @@ td, th {
 
 svg {
     height: 150px;
+}
+
+.map-container > div {
+    width: 200px;
+    height: 200px;
 }
